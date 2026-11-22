@@ -3,15 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Coach running route et trail à distance, depuis Meylan près de Grenoble. Plans personnalisés sur Intervals, prépas course, calculateur d'allures VMA. Appel découverte gratuit.">
+<meta name="description" content="Coach running route et trail à distance, depuis Meylan près de Grenoble. Plans personnalisés sur Intervals, prépas course, calculateur d&#x27;allures VMA. Appel découverte gratuit.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Alex Coach Run">
-<meta property="og:title" content="Alex Coach Run · Coach running route et trail">
-<meta property="og:description" content="Plans d'entraînement personnalisés à distance, prépas course et appel découverte gratuit de 15 minutes.">
-<meta property="og:image" content="https://alexcoachrun.fr/hero-alex.jpg">
-<meta property="og:url" content="https://alexcoachrun.fr/">
-<link rel="canonical" href="https://alexcoachrun.fr/">
+<meta property="og:title" content="Alex Coach Run · Coach running à Grenoble et à distance">
+<meta property="og:description" content="Coach running route et trail à distance, depuis Meylan près de Grenoble. Plans personnalisés sur Intervals, prépas course, calculateur d&#x27;allures VMA. Appel découverte gratuit.">
+<meta property="og:image" content="hero-alex.jpg">
 <meta property="og:image:alt" content="Alexandre Lorcery en course au bord de l'Isère">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1E3A2B">
@@ -214,7 +212,7 @@ html[data-choix="a-faire"] #choix-pays{display:flex}
 html[data-choix="a-faire"] body{overflow:hidden}
 .choix-boite{max-width:560px;width:100%;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px}
 .choix-logo{width:88px;height:88px}
-.choix-boite h1{font-size:clamp(40px,8vw,64px);font-weight:800;color:var(--sapin)}
+.choix-boite h1,.choix-boite h2{font-size:clamp(40px,8vw,64px);font-weight:800;color:var(--sapin)}
 .choix-boite p{color:var(--gris)}
 .choix-boutons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;width:100%;margin-top:10px}
 .choix-boutons button{font:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:22px 16px;min-height:120px;border-radius:14px;border:2px solid var(--sapin);background:#FBF8F2;color:var(--sapin)}
@@ -272,6 +270,45 @@ footer a{color:#F3B08A}
   .visuel{flex-direction:column;align-items:center}
   nav a{padding:10px 8px;font-size:14px}
 }
+
+/* Témoignages */
+.carrousel{max-width:340px;margin:0 auto}
+.piste{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;border-radius:14px}
+.piste::-webkit-scrollbar{display:none}
+@media (prefers-reduced-motion: reduce){.piste{scroll-behavior:auto}}
+.diapo{flex:0 0 100%;scroll-snap-align:center;margin:0}
+.diapo video{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:50% 35%;border-radius:14px;background:#16291F;border:2px solid #47685A}
+.diapo figcaption{margin-top:12px;text-align:center}
+.diapo figcaption b{display:block;font-family:var(--display);font-size:24px;font-weight:800;color:var(--creme);line-height:1.1}
+.diapo figcaption span{font-size:15px;color:#C9D6CC}
+.commandes{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:16px}
+.fleche{font:inherit;width:48px;height:48px;border-radius:50%;border:2px solid var(--creme);background:transparent;color:var(--creme);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.fleche:hover{background:var(--creme);color:var(--sapin)}
+.fleche:disabled{opacity:.35;cursor:default;background:transparent;color:var(--creme)}
+.fleche svg{width:20px;height:20px}
+.points{display:flex;gap:8px}
+.points button{width:12px;height:12px;padding:0;border-radius:50%;border:2px solid var(--creme);background:transparent;cursor:pointer}
+.points button[aria-current="true"]{background:var(--orange-clair);border-color:var(--orange-clair)}
+
+/* Site multipage */
+.entete h1{font-size:clamp(38px,5vw,62px);font-weight:800;color:var(--sapin);max-width:16em}
+.sombre .entete h1{color:var(--creme)}
+.apropos h1{font-size:clamp(38px,5vw,62px);font-weight:800;color:var(--sapin);margin-bottom:20px}
+.legal h1{font-size:34px;font-weight:800;color:var(--sapin);margin-bottom:12px}
+nav a[aria-current="page"]{background:var(--beige)}
+nav a.cta[aria-current="page"]{background:var(--sapin-2)}
+.suite{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap}
+.sombre .btn-ligne{color:var(--creme);border-color:var(--creme)}
+.sombre .btn-ligne:hover{background:var(--creme);color:var(--sapin)}
+@media (max-width: 700px){nav{width:100%}nav ul{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin:0 -24px;padding:0 24px}nav ul::-webkit-scrollbar{display:none}nav a{white-space:nowrap}}
+.diapo .res-ligne{display:block;margin-top:10px;padding-top:10px;border-top:1px solid #47685A;color:var(--creme);font-size:15px;line-height:1.4}
+.diapo .res-ligne em{display:block;font-style:normal;font-family:var(--display);font-weight:800;font-size:22px;color:var(--orange-clair);margin-bottom:2px}
+.diapo figcaption>span:not(.res-ligne){display:block}
+.wa-flottant{position:fixed;right:18px;bottom:18px;z-index:50;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.28);text-decoration:none}
+.wa-flottant:hover{background:#1EBE5A}
+.wa-flottant svg{width:30px;height:30px}
+html[data-choix="a-faire"] .wa-flottant{display:none}
+@media (max-width: 700px){footer{padding-bottom:96px}}
 </style>
 <script>
 (function(){
@@ -290,7 +327,7 @@ footer a{color:#F3B08A}
   <div class="choix-boite">
     <svg class="choix-logo" aria-hidden="true"><use href="#logoA"></use></svg>
     <div class="surtitre">Alex Coach Run</div>
-    <h1 id="choixTitre">Où cours-tu ?</h1>
+    <h2 id="choixTitre">Où cours-tu ?</h2>
     <p>Choisis ton pays pour voir les formules et les prix qui te concernent.</p>
     <div class="choix-boutons">
       <button type="button" data-choix-pays="fr"><span class="drapeau" aria-hidden="true">🇫🇷</span><b>France</b><small>Prix en euros</small></button>
@@ -315,27 +352,28 @@ footer a{color:#F3B08A}
   </defs>
 </svg>
 
+
 <header>
   <div class="wrap barre">
-    <a class="marque" href="#accueil" aria-label="Alex Coach Run, retour en haut">
+    <a class="marque" href="index.html" aria-label="Alex Coach Run, page d'accueil">
       <svg aria-hidden="true"><use href="#logoA"></use></svg>
       <div><b>Alex</b><span>COACH RUN</span></div>
     </a>
     <nav aria-label="Menu principal">
       <ul>
-        <li><a href="#tarifs">Offres</a></li>
-        <li><a href="#seances">Séances</a></li>
-        <li><a href="#allures">Allures</a></li>
-        <li><a href="#evenements">Événements</a></li>
-        <li><a href="#apropos">À propos</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a class="cta" href="#contact">Me contacter</a></li>
+        <li><a href="index.html" aria-current="page">Accueil</a></li>
+        <li><a href="formules.html">Formules</a></li>
+        <li><a href="seances.html">Séances &amp; allures</a></li>
+        <li><a href="evenements.html">Événements</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a class="cta" href="contact.html">Me contacter</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<main id="accueil">
+<main>
   <div class="hero">
     <div class="wrap grille">
       <div>
@@ -344,7 +382,7 @@ footer a{color:#F3B08A}
         <p class="intro">Coach running à distance <span class="fr">partout en France, depuis Meylan (Isère)</span><span class="ch">pour toute la Suisse romande</span> : je construis des plans d'entraînement calés sur ta VMA et tes allures, suivis sur Intervals, et je te prépare pour ta course sur bitume ou sur sentier. On se retrouve en vrai sur les événements.</p>
         <div class="boutons">
           <a class="btn btn-plein" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0RaMs_-pJOMNV_IGy2X3xm06qwWKzZ32V1v8KedG6e2ZIyab3DOg815bL9_L8Tgax8Lc_lVVni" target="_blank" rel="noopener">Réserver mon appel découverte (15 min)</a>
-          <a class="btn btn-ligne" href="#tarifs">Voir les formules</a>
+          <a class="btn btn-ligne" href="formules.html">Voir les formules</a>
         </div>
       </div>
       <figure class="hero-photo">
@@ -392,184 +430,69 @@ footer a{color:#F3B08A}
           <div class="terrain"><span class="puce">Sur place</span><span class="puce">Sur devis</span></div>
         </article>
       </div>
+      <div class="suite"><a class="btn btn-plein" href="formules.html">Voir les formules et les tarifs</a><a class="btn btn-ligne" href="seances.html">Exemples de séances</a></div>
     </div>
   </section>
 
-  <section id="seances">
+  <section id="temoignages" class="sombre">
     <div class="wrap">
       <div class="entete">
-        <h2>Exemples de séances</h2>
-        <p>Chaque séance est calée sur ta VMA : deux coureurs font le même entraînement, chacun à son allure.</p>
+        <h2>Ils en parlent mieux que moi</h2>
+        <p>Des coureurs que j'accompagne racontent leur expérience du coaching, en vidéo.</p>
       </div>
-      <div class="zone-seances">
-      <div class="visuel fond-logo" aria-hidden="true">
-        <div class="disque">
-          <svg viewBox="0 0 200 200">
-            <path d="M20 180 L100 22 L180 180 H146 L100 88 L54 180 Z" fill="#1E3A2B"></path>
-            <path d="M100 22 L84.8 52 L94 46 L100 54 L107 46 L115.2 52 Z" fill="#F4EEE3"></path>
-            <g clip-path="url(#pied)">
-              <path d="M137 188 L76 150 L113 128 L100 110" fill="none" stroke="#E9DFCC" stroke-width="14" stroke-linejoin="round" stroke-linecap="round"></path>
-              <path class="route-anim" d="M137 188 L76 150 L113 128 L100 110" fill="none" stroke="#E2662A" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"></path>
-              <path class="pointilles" d="M137 188 L76 150 L113 128 L100 110" fill="none" stroke="#F4EEE3" stroke-width="2" stroke-dasharray="4 4" stroke-linejoin="round"></path>
-            </g>
-            <circle class="pointilles" cx="100" cy="110" r="5.5" fill="#F4EEE3" stroke="#E2662A" stroke-width="3"></circle>
-          </svg>
+      <div class="carrousel" role="region" aria-roledescription="carrousel" aria-label="Témoignages vidéo">
+        <div class="piste" id="piste">
+          <figure class="diapo" aria-label="1 sur 2">
+            <video controls playsinline preload="none" poster="poster-maurane.jpg" width="540" height="960" aria-label="Témoignage vidéo de Maurane"><source src="temoignage-maurane.mp4" type="video/mp4"></video>
+            <figcaption><b>Maurane</b><span>24 ans, Rennes</span><span class="res-ligne"><em>Semi de Rome en 1 h 43</em>Objectif sous 1 h 45 atteint</span></figcaption>
+          </figure>
+          <figure class="diapo" aria-label="2 sur 2">
+            <video controls playsinline preload="none" poster="poster-enzo.jpg" width="464" height="832" aria-label="Témoignage vidéo d'Enzo"><source src="temoignage-enzo.mp4" type="video/mp4"></video>
+            <figcaption><b>Enzo</b><span>26 ans, Le Mans</span><span class="res-ligne"><em>Retour de blessure réussi</em>Grâce à des ajustements rapides et fréquents du plan</span></figcaption>
+          </figure>
+        </div>
+        <div class="commandes">
+          <button type="button" class="fleche" id="precedent" aria-label="Témoignage précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg></button>
+          <div class="points" id="points"></div>
+          <button type="button" class="fleche" id="suivant" aria-label="Témoignage suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg></button>
         </div>
       </div>
-      <div class="seances">
-        <article class="carte-seance">
-          <span class="puce puce-orange">Spé 10 km</span>
-          <h3>5 × 2000 m</h3>
-          <div class="profil" aria-hidden="true"><i style="height:30%;flex:3"></i><i style="height:90%"></i><i style="height:20%;flex:.5"></i><i style="height:90%"></i><i style="height:20%;flex:.5"></i><i style="height:90%"></i><i style="height:20%;flex:.5"></i><i style="height:90%"></i><i style="height:20%;flex:.5"></i><i style="height:90%"></i><i style="height:30%;flex:2"></i></div>
-          <dl>
-            <dt>Échauffement</dt><dd>20' footing + gammes + 3 accélérations</dd>
-            <dt>Corps de séance</dt><dd>5 × 2000 m, récup 2' trot</dd>
-            <dt>Allure cible</dt><dd>Allure 10 km, environ 90 % VMA</dd>
-            <dt>Retour au calme</dt><dd>10' footing léger</dd>
-          </dl>
-        </article>
-        <article class="carte-seance">
-          <span class="puce puce-orange">Spé marathon</span>
-          <h3>Sortie longue 3 × 5 km</h3>
-          <div class="profil" aria-hidden="true"><i style="height:35%;flex:2"></i><i style="height:65%;flex:2"></i><i style="height:35%;flex:.8"></i><i style="height:65%;flex:2"></i><i style="height:35%;flex:.8"></i><i style="height:65%;flex:2"></i><i style="height:35%;flex:1.5"></i></div>
-          <dl>
-            <dt>Échauffement</dt><dd>5 km en endurance fondamentale</dd>
-            <dt>Corps de séance</dt><dd>3 × 5 km, récup 1 km en endurance</dd>
-            <dt>Allure cible</dt><dd>Allure marathon, environ 75 à 80 % VMA</dd>
-            <dt>Retour au calme</dt><dd>3 km souples (environ 25 km au total)</dd>
-          </dl>
-        </article>
-        <article class="carte-seance">
-          <span class="puce puce-orange">Spé trail</span>
-          <h3>8 × 3' en côte</h3>
-          <div class="profil" aria-hidden="true"><i style="height:30%;flex:3"></i><i style="height:85%"></i><i style="height:15%"></i><i style="height:85%"></i><i style="height:15%"></i><i style="height:85%"></i><i style="height:15%"></i><i style="height:85%"></i><i style="height:15%"></i><i style="height:85%"></i><i style="height:30%;flex:2"></i></div>
-          <dl>
-            <dt>Échauffement</dt><dd>20' footing vallonné + gammes</dd>
-            <dt>Corps de séance</dt><dd>8 × 3' en montée (pente de 6 à 10 %), récup en descente active</dd>
-            <dt>Intensité</dt><dd>Effort soutenu, environ 85 % FC max, en courant ou en marche rapide</dd>
-            <dt>Retour au calme</dt><dd>10' footing + travail de descente technique</dd>
-          </dl>
-        </article>
-        <article class="carte-seance">
-          <span class="puce puce-orange">Spé cross</span>
-          <h3>2 × (6 × 300 m)</h3>
-          <div class="profil" aria-hidden="true"><i style="height:30%;flex:3"></i><i style="height:100%;flex:.6"></i><i style="height:15%;flex:.4"></i><i style="height:100%;flex:.6"></i><i style="height:15%;flex:.4"></i><i style="height:100%;flex:.6"></i><i style="height:15%;flex:1.2"></i><i style="height:100%;flex:.6"></i><i style="height:15%;flex:.4"></i><i style="height:100%;flex:.6"></i><i style="height:15%;flex:.4"></i><i style="height:100%;flex:.6"></i><i style="height:30%;flex:2"></i></div>
-          <dl>
-            <dt>Échauffement</dt><dd>20' footing sur herbe + gammes + 2 lignes droites</dd>
-            <dt>Corps de séance</dt><dd>2 séries de 6 × 300 m, récup 1' entre les répétitions et 4' entre les séries</dd>
-            <dt>Allure cible</dt><dd>100 à 105 % VMA, sur terrain souple</dd>
-            <dt>Retour au calme</dt><dd>10' footing léger</dd>
-          </dl>
-        </article>
-      </div>
-      </div>
-      <p class="legende">Le graphique montre l'intensité au fil de la séance : plus la barre est haute, plus l'effort est intense.</p>
-    </div>
-  </section>
-
-  <section id="allures" class="beige">
-    <div class="wrap">
-      <div class="entete">
-        <h2>Calcule tes allures</h2>
-        <p>Entre ta VMA : tu obtiens tes allures d'entraînement, calculées comme dans mes plans. Pas encore de VMA ? Je t'explique comment la mesurer pendant l'appel découverte.</p>
-      </div>
-      <div class="calc">
-        <div class="calc-saisie">
-          <label for="vma">Ta VMA (km/h)</label>
-          <input id="vma" type="number" inputmode="decimal" min="8" max="25" step="0.1" value="15">
-          <p class="calc-aide">Entre 8 et 25 km/h.</p>
-        </div>
-        <div class="calc-tab">
-          <table class="calc-table">
-            <thead><tr><th scope="col">Zone</th><th scope="col">% VMA</th><th scope="col">Allure</th><th scope="col">Vitesse</th></tr></thead>
-            <tbody id="calcCorps"></tbody>
-          </table>
-        </div>
-      </div>
-      <p class="legende" id="calc400" aria-live="polite"></p>
-      <p class="legende">Allures indicatives : on les affine ensemble selon ton profil, ton terrain et tes sensations. <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0RaMs_-pJOMNV_IGy2X3xm06qwWKzZ32V1v8KedG6e2ZIyab3DOg815bL9_L8Tgax8Lc_lVVni" target="_blank" rel="noopener">Réserver mon appel découverte</a></p>
-    </div>
-  </section>
-
-  <section id="tarifs" class="sombre">
-    <div class="wrap">
-      <div class="entete">
-        <h2>Formules de coaching</h2>
-        <p>Un abonnement mensuel, 100 % à distance. Chaque formule comprend tout le contenu de la précédente.</p>
-      </div>
-      <div class="formules">
-        <article class="tarif">
-          <h3>Essentielle</h3>
-          <div class="prix"><span class="ch">49 CHF</span><span class="fr">49 €</span> <small>/ mois</small></div>
-          <ul>
-            <li>Plan personnalisé route ou trail, envoyé sur Intervals et synchronisé avec ta montre</li>
-            <li>Adapté à ton objectif, ajusté toutes les 2 semaines</li>
-            <li>Suivi de ta progression</li>
-            <li>Réponse à tes questions sous 48 h</li>
-          </ul>
-          <a class="btn" href="#contact" data-objet="essentielle">Choisir Essentielle</a>
-        </article>
-        <article class="tarif vedette">
-          <span class="badge">Recommandée</span>
-          <h3>Premium</h3>
-          <div class="prix"><span class="ch">79 CHF</span><span class="fr">79 €</span> <small>/ mois</small></div>
-          <ul>
-            <li>Ajustements chaque semaine, selon tes ressentis et ta charge</li>
-            <li>Analyse vidéo de ta technique de course</li>
-            <li>Conseils nutritionnels généraux</li>
-            <li>Réponse sous 24 h</li>
-          </ul>
-          <a class="btn" href="#contact" data-objet="premium">Choisir Premium</a>
-        </article>
-        <article class="tarif">
-          <h3>Performance</h3>
-          <div class="prix"><span class="ch">109 CHF</span><span class="fr">109 €</span> <small>/ mois</small></div>
-          <ul>
-            <li>Bilan mensuel approfondi : charge, forme et fatigue</li>
-            <li>Rendez-vous vidéo mensuel de 30 min</li>
-            <li>Analyse de tes données Garmin ou Coros</li>
-            <li>Planification de ta saison, route et trail</li>
-          </ul>
-          <a class="btn" href="#contact" data-objet="performance">Choisir Performance</a>
-        </article>
-      </div>
-      <div class="extras">
-        <article class="tarif">
-          <h3>Engagement 6 mois</h3>
-          <div class="prix">1 mois <small>offert</small></div>
-          <p>Sur toutes les formules : tu paies 5 mois sur 6.</p>
-          <a class="btn" href="#contact">M'engager 6 mois</a>
-        </article>
-        <article class="tarif">
-          <h3>Prépa course<span class="ch"> suisse</span></h3>
-          <div class="prix"><span class="ch">129 CHF</span><span class="fr">129 €</span> <small>/ 10 à 12 sem.</small></div>
-          <p class="ch">Forfait unique pour préparer une course suisse (20 km de Lausanne, Genève Marathon, Morat-Fribourg…), avec stratégie pour le jour J. La prépa se fait entièrement à distance : je ne serai pas présent sur ces courses.</p>
-          <p class="fr">Forfait unique pour un objectif daté (10 km, semi, marathon ou trail), avec stratégie pour le jour J.</p>
-          <a class="btn" href="#contact" data-objet="prepa">Préparer ma course</a>
-        </article>
-        <article class="tarif devis">
-          <h3>Événements &amp; groupes</h3>
-          <div class="prix">Sur devis</div>
-          <p>Reconnaissance de parcours, séance la veille d'une course, webinaire pour un club ou un magasin : dis-moi le projet, le nombre de coureurs et la date.</p>
-          <a class="btn" href="#contact" data-objet="groupe">Demander un devis</a>
-        </article>
-      </div>
-      <p class="note"><span class="ch">Prix en francs suisses. Paiement par TWINT ou virement.</span><span class="fr">TVA non applicable, article 293 B du CGI. Paiement par virement.</span> Le coaching se fait à distance ; je me déplace uniquement pour les événements.</p>
-    </div>
-  </section>
-
-  <section id="evenements" class="beige">
-    <div class="wrap">
-      <div class="entete">
-        <h2>On se retrouve sur la ligne de départ</h2>
-        <p>Le coaching se fait à distance, mais je me déplace sur ces courses : reconnaissance du parcours, conseils de dernière minute et rencontre avec les coureurs que je suis.</p>
-      </div>
-      <div class="evenements">
-        <article class="evt"><span class="quand">Dimanche 29 novembre 2026</span><h3>10 km de Tournon</h3><p>Tournon-sur-Rhône (Ardèche). Course sur route labellisée, parcours rapide et roulant.</p><p class="prepa">Course toute proche : je te prépare l'affûtage et ta stratégie de course.</p><a class="btn btn-ligne" href="#contact" data-objet="prepa" data-course="le 10 km de Tournon (29 novembre 2026)">Préparer cette course</a></article>
-        <article class="evt"><span class="quand">Dimanche 21 février 2027</span><h3>Semi de Saint-Priest</h3><p>Les Foulées San-Priotes (Rhône) : semi-marathon, 10 km et 5,8 km.</p><p class="prepa">Prépa conseillée : 10 semaines, à lancer avant le 13 décembre 2026.</p><a class="btn btn-ligne" href="#contact" data-objet="prepa" data-course="le semi de Saint-Priest (21 février 2027)">Préparer cette course</a></article>
-        <article class="evt"><span class="quand">Dimanche 7 mars 2027</span><h3>Semi de Bourg-en-Bresse</h3><p>Bourg-en-Bresse (Ain) : semi-marathon, 10 km et 5 km.</p><p class="prepa">Prépa conseillée : 10 semaines, à lancer avant le 27 décembre 2026.</p><a class="btn btn-ligne" href="#contact" data-objet="prepa" data-course="le semi de Bourg-en-Bresse (7 mars 2027)">Préparer cette course</a></article>
-      </div>
-      <p class="legende">Dates annoncées par les organisateurs : vérifie les horaires et les inscriptions sur le site de chaque course.</p>
+      <script>
+      (function(){
+        var piste = document.getElementById('piste');
+        if (!piste) return;
+        var diapos = piste.querySelectorAll('.diapo');
+        var prec = document.getElementById('precedent'), suiv = document.getElementById('suivant'), zone = document.getElementById('points');
+        var actuel = 0, points = [];
+        diapos.forEach(function(d, i){
+          var b = document.createElement('button');
+          b.type = 'button';
+          b.setAttribute('aria-label', 'Voir le témoignage ' + (i + 1));
+          b.addEventListener('click', function(){ aller(i); });
+          zone.appendChild(b); points.push(b);
+        });
+        function maj(i){
+          if (i !== actuel){ diapos.forEach(function(d){ var v = d.querySelector('video'); if (v && !v.paused) v.pause(); }); }
+          actuel = i;
+          points.forEach(function(b, j){ b.setAttribute('aria-current', j === i ? 'true' : 'false'); });
+          prec.disabled = i === 0;
+          suiv.disabled = i === diapos.length - 1;
+        }
+        function aller(i){
+          i = Math.max(0, Math.min(diapos.length - 1, i));
+          piste.scrollTo({ left: diapos[i].offsetLeft - piste.offsetLeft, behavior: 'smooth' });
+          maj(i);
+        }
+        prec.addEventListener('click', function(){ aller(actuel - 1); });
+        suiv.addEventListener('click', function(){ aller(actuel + 1); });
+        var t;
+        piste.addEventListener('scroll', function(){
+          clearTimeout(t);
+          t = setTimeout(function(){ var i = Math.round(piste.scrollLeft / piste.clientWidth); if (i !== actuel) maj(i); }, 80);
+        });
+        maj(0);
+      })();
+      </script>
     </div>
   </section>
 
@@ -597,148 +520,15 @@ footer a{color:#F3B08A}
       </div>
     </div>
   </section>
-
-  <section id="apropos" class="beige">
-    <div class="wrap apropos">
-      <div class="visuel" aria-hidden="true">
-        <div class="disque"><svg viewBox="0 0 200 200"><use href="#logoA"></use></svg></div>
-      </div>
-      <div>
-        <h2>Moi, c'est Alex</h2>
-        <p>Alexandre Lorcery, coureur et coach running basé à Meylan, près de Grenoble. Je cours sur route depuis 5 ans, avec passion et rigueur, et je m'entraîne entre 100 et 120 km par semaine sous les couleurs de l'APSTT Grenoble.</p>
-        <p>Je suis coach du Begat Running Club, qui compte plus de 300 coureurs de tous niveaux, et coach personnel. Je mets la même énergie dans la performance et le dépassement de soi, pour moi comme pour les coureurs que j'accompagne.</p>
-        <p>Mes objectifs du moment : passer sous les 32 minutes au 10 km de Tournon, puis courir en 1 h 08 au semi de Bourg-en-Bresse. Deux courses où l'on peut se retrouver sur la ligne de départ.</p>
-        <p>Côté formation, je suis diplômé d'une licence STAPS, mention Éducation et motricité (Nantes Université, 2022), et titulaire de la carte professionnelle d'éducateur sportif : mes plans s'appuient sur les bases scientifiques de l'entraînement.</p>
-        <div class="faits">
-          <span class="puce">Route</span><span class="puce">Trail</span><span class="puce">100–120 km / semaine</span><span class="puce">Begat Running Club</span><span class="puce">Licence STAPS</span><span class="puce">Meylan (Isère)</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="wrap">
-      <div class="entete">
-        <h2>Questions fréquentes</h2>
-      </div>
-      <div class="faq">
-        <details><summary>Je débute, c'est pour moi ?</summary><p>Oui. Le plan part de ton niveau réel, même si tu cours deux fois par semaine. L'objectif peut simplement être de finir ton premier 10 km sans marcher.</p></details>
-        <details><summary>Route ou trail ?</summary><p>Les deux. Ton plan s'adapte à ton terrain et à ton objectif, du 10 km sur route au trail avec dénivelé.</p></details>
-        <details><summary>Comment je reçois mes séances ?</summary><p>Sur Intervals. Tu crées ton compte, je t'aide à le relier à ta montre, et tes séances arrivent avec les allures calculées pour toi. Tes sorties remontent ensuite dans Intervals, ce qui me permet d'ajuster ton plan.</p></details>
-        <details><summary>Faut-il une montre GPS ?</summary><p>C'est conseillé (Garmin, Coros…) pour suivre tes allures. Sans montre, tu peux démarrer avec ton téléphone.</p></details>
-        <details><summary>Je ne connais pas ma VMA, comment faire ?</summary><p>Je te donne un test simple à faire sur piste ou sur un parcours plat. Le calculateur plus haut te donne ensuite toutes tes allures.</p></details>
-        <details><summary>Je peux arrêter quand je veux ?</summary><p>Les formules mensuelles sont sans engagement : tu peux arrêter à la fin de chaque mois. L'engagement 6 mois est une option, avec un mois offert.</p></details>
-        <details><summary>On se voit en vrai ?</summary><p>Le suivi se fait à distance. On peut se retrouver sur les événements où je me déplace : ils sont listés dans la section Événements.</p></details>
-        <details><summary>Comment se passe le paiement ?</summary><p>Chaque mois, au début de la période. <span class="ch">En francs suisses, par TWINT ou virement.</span><span class="fr">En euros, par virement.</span></p></details>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="sombre">
-    <div class="wrap contact">
-      <div>
-        <div class="entete" style="margin-bottom:0">
-          <h2>Parlons de ton objectif</h2>
-        </div>
-        <p style="color:#C9D6CC;margin-top:16px;max-width:30em">Écris-moi par le formulaire, par message ou sur les réseaux. Je réponds sous 48 h. Pour l'appel découverte, <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0RaMs_-pJOMNV_IGy2X3xm06qwWKzZ32V1v8KedG6e2ZIyab3DOg815bL9_L8Tgax8Lc_lVVni" target="_blank" rel="noopener" style="color:#F3B08A">réserve directement un créneau</a> en semaine ; le week-end, c'est sur demande par WhatsApp.</p>
-        <div class="canaux">
-          <a class="canal" href="mailto:alex.lorcery@gmail.com">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>
-            <div><b>E-mail</b><span id="emailTexte">alex.lorcery@gmail.com</span></div>
-          </a>
-          <a class="canal" href="https://wa.me/33622818362">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>
-            <div><b>Téléphone / WhatsApp</b><span>+33 6 22 81 83 62</span></div>
-          </a>
-          <a class="canal" href="https://www.instagram.com/alex_coach_run/">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg>
-            <div><b>Instagram</b><span>@alex_coach_run</span></div>
-          </a>
-          <a class="canal" href="https://www.tiktok.com/@alex.coaching2">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"></path><path d="M14 3c.5 2.5 2.5 4.5 5 5"></path></svg>
-            <div><b>TikTok</b><span>@alex.coaching2</span></div>
-          </a>
-          <a class="canal" href="https://www.strava.com/athletes/60119809">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18 9 7l4 7"></path><path d="m13 14 3-5 5 9"></path></svg>
-            <div><b>Strava</b><span>Alexandre Lorcery</span></div>
-          </a>
-        </div>
-      </div>
-
-      <form id="formulaire" novalidate>
-        <h3>Demande de contact</h3>
-        <div class="duo">
-          <div class="champ">
-            <label for="nom">Prénom et nom</label>
-            <input id="nom" name="nom" autocomplete="name" required>
-          </div>
-          <div class="champ">
-            <label for="email">E-mail</label>
-            <input id="email" name="email" type="email" autocomplete="email" required>
-          </div>
-        </div>
-        <div class="champ">
-          <label for="objet">Ta demande</label>
-          <select id="objet" name="objet">
-            <option value="decouverte">Appel découverte gratuit (15 min)</option>
-            <option value="essentielle">Formule Essentielle</option>
-            <option value="premium">Formule Premium</option>
-            <option value="performance">Formule Performance</option>
-            <option value="prepa">Prépa course / trail</option>
-            <option value="groupe">Événement ou groupe (devis)</option>
-            <option value="autre">Autre question</option>
-          </select>
-        </div>
-        <div class="champ">
-          <label for="message">Ton objectif et ton niveau</label>
-          <textarea id="message" name="message" placeholder="Ex. : semi-marathon en avril, je cours 3 fois par semaine, record actuel 1 h 52."></textarea>
-        </div>
-        <button class="btn btn-plein" type="submit">Préparer mon e-mail</button>
-        <p class="retour" id="retour" role="status" hidden></p>
-      </form>
-    </div>
-  </section>
-  <section id="legal" class="beige legal">
-    <div class="wrap">
-      <h2>Informations légales</h2>
-      <details>
-        <summary>Mentions légales</summary>
-        <div class="contenu">
-          <p>Éditeur du site : Alexandre Lorcery, entrepreneur individuel, Alex Coach Run.</p>
-          <p>SIRET : 878 433 192 00027 (APE 85.51Z) · Carte professionnelle d'éducateur sportif n° 03826ED0737, délivrée par la préfecture de l'Isère (<a href="https://recherche-educateur.sports.gouv.fr">vérifier sur le site du ministère</a>)</p>
-          <p>Adresse : 5 chemin de la Taillat, 38240 Meylan · Contact : alex.lorcery@gmail.com</p>
-          <p>Hébergeur : OVH SAS, 2 rue Kellermann, 59100 Roubaix, France · Tél. 1007 (depuis la France)</p>
-        </div>
-      </details>
-      <details>
-        <summary>Conditions générales de vente</summary>
-        <div class="contenu">
-          <p><strong>Prestations.</strong> Coaching en course à pied à distance (formules mensuelles et prépas course), et interventions sur devis lors d'événements.</p>
-          <p><strong>Prix et paiement.</strong> Les prix sont ceux affichés sur ce site au moment de la souscription. TVA non applicable, article 293 B du CGI. Les formules mensuelles se paient au début de chaque mois, les prépas course en une fois.</p>
-          <p><strong>Durée et résiliation.</strong> Les formules mensuelles sont sans engagement et peuvent être arrêtées avant le renouvellement suivant. L'option 6 mois engage pour toute sa durée.</p>
-          <p><strong>Rétractation.</strong> Pour une souscription à distance, tu disposes de 14 jours pour te rétracter. Si tu demandes que le coaching commence avant la fin de ce délai, la part du service déjà fournie reste due.</p>
-          <p><strong>Médiation.</strong> En cas de litige non résolu à l'amiable, un client particulier peut saisir gratuitement le médiateur de la consommation : CM2C (Centre de la médiation de la consommation de conciliateurs de justice), 49 rue de Ponthieu, 75008 Paris, tél. 01 89 47 00 14, <a href="https://www.cm2c.net">www.cm2c.net</a> (adhésion n° SIRET 87843319200027, valable jusqu'au 19/11/2029).</p>
-          <p><strong>Santé.</strong> Avant de commencer, assure-toi auprès d'un médecin que tu peux pratiquer la course à pied. Le coaching ne remplace pas un avis médical : signale-moi toute douleur ou blessure.</p>
-        </div>
-      </details>
-      <details>
-        <summary>Données personnelles</summary>
-        <div class="contenu">
-          <p>Les informations que tu m'envoies (nom, e-mail, message, données d'entraînement partagées sur Intervals) servent uniquement à te répondre et à assurer ton coaching. Elles ne sont ni vendues ni transmises à des tiers.</p>
-          <p>Tu peux demander à les consulter, les corriger ou les supprimer en écrivant à alex.lorcery@gmail.com.</p>
-          <p>Ce site ne dépose pas de cookies publicitaires. Il garde seulement en mémoire, dans ton navigateur, ton choix entre la version France et la version Suisse. La fréquentation est mesurée par l'outil de statistiques de l'hébergeur, à partir des journaux du serveur et sans cookie.</p>
-        </div>
-      </details>
-    </div>
-  </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>© Alex Coach Run · Sur route comme en trail · <a href="#legal">Mentions légales, CGV et données</a> · <button type="button" id="changerPays" class="lien-pays"><span class="fr">🇫🇷 France</span><span class="ch">🇨🇭 Suisse</span> · changer de pays</button></span>
+    <span>© Alex Coach Run · Sur route comme en trail · <a href="mentions-legales.html">Mentions légales, CGV et données</a> · <button type="button" id="changerPays" class="lien-pays"><span class="fr">🇫🇷 France</span><span class="ch">🇨🇭 Suisse</span> · changer de pays</button></span>
     <span>Carte pro d'éducateur sportif n° 03826ED0737 · SIRET 878 433 192 00027</span>
   </div>
 </footer>
+<a class="wa-flottant" href="https://wa.me/33622818362?text=Bonjour%20Alex%2C%20je%20viens%20de%20ton%20site%20et%20j%27aimerais%20en%20savoir%20plus%20sur%20le%20coaching." target="_blank" rel="noopener" aria-label="M'écrire sur WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.05c-.24.68-1.42 1.32-1.95 1.36-.5.05-.97.23-3.27-.68-2.76-1.09-4.5-3.92-4.64-4.1-.13-.18-1.1-1.47-1.1-2.8 0-1.33.7-1.99.95-2.26.24-.27.53-.34.71-.34l.51.01c.16.01.38-.06.6.46.23.54.77 1.87.84 2 .07.14.11.3.02.48-.09.18-.13.29-.27.45-.13.16-.28.35-.4.47-.13.13-.27.28-.12.54.16.27.7 1.15 1.5 1.86 1.03.92 1.9 1.2 2.17 1.34.27.13.43.11.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.23.6-.14.25.09 1.57.74 1.84.88.27.13.45.2.52.31.07.11.07.65-.17 1.33z"/></svg></a>
 
 <script>
 (function(){
@@ -781,6 +571,7 @@ footer a{color:#F3B08A}
   var champVma = document.getElementById('vma');
   var corps = document.getElementById('calcCorps');
   var l400 = document.getElementById('calc400');
+  if (champVma && corps && l400){
   function calculer(){
     var v = parseFloat(String(champVma.value).replace(',', '.'));
     corps.innerHTML = '';
@@ -796,9 +587,17 @@ footer a{color:#F3B08A}
   }
   champVma.addEventListener('input', calculer);
   calculer();
+  }
 
   var form = document.getElementById('formulaire');
   var retour = document.getElementById('retour');
+  if (form){
+  try {
+    var params = new URLSearchParams(location.search);
+    var o = params.get('objet'), c = params.get('course');
+    if (o && libelles[o]) form.objet.value = o;
+    if (c && !form.message.value.trim()) form.message.value = 'Je veux préparer ' + c + '. ';
+  } catch(e){}
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var nom = form.nom.value.trim();
@@ -817,6 +616,7 @@ footer a{color:#F3B08A}
     retour.textContent = "Ton application e-mail devrait s'ouvrir avec le message prêt à envoyer. Si rien ne s'ouvre, écris directement à " + EMAIL + '.';
     try { window.location.href = lien; } catch(err) {}
   });
+  }
 })();
 </script>
 </body>
