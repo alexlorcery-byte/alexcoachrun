@@ -306,6 +306,21 @@ nav a.cta[aria-current="true"]{background:var(--sapin-2)}
   .marque b{font-size:22px}
   html{scroll-padding-top:130px}
 }
+
+/* Boutons de navigation interne */
+.raccourcis{background:var(--beige);border-top:1px solid rgba(30,58,43,.12);border-bottom:1px solid rgba(30,58,43,.12)}
+.raccourcis .wrap{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding-top:16px;padding-bottom:16px}
+@media (max-width: 700px){.raccourcis .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}}
+.raccourcis .wrap::-webkit-scrollbar{display:none}
+.raccourcis .lib{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--sapin);white-space:nowrap;margin-right:4px}
+.raccourcis a{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;border-radius:999px;border:2px solid var(--sapin);color:var(--sapin);background:var(--creme);font-weight:700;font-size:15px;text-decoration:none;white-space:nowrap}
+.raccourcis a:hover{background:var(--sapin);color:var(--creme)}
+.sombre .suite .btn-plein{background:var(--creme);color:var(--sapin);border-color:var(--creme)}
+.sombre .suite .btn-plein:hover{background:#fff;border-color:#fff}
+.haut{position:fixed;right:25px;bottom:90px;z-index:50;width:44px;height:44px;border-radius:50%;background:var(--sapin);color:var(--creme);display:flex;align-items:center;justify-content:center;border:2px solid var(--creme);box-shadow:0 4px 14px rgba(0,0,0,.25);text-decoration:none;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s,transform .25s,visibility .25s}
+.haut.visible{opacity:1;visibility:visible;transform:none}
+.haut:hover{background:var(--sapin-2)}
+.haut svg{width:22px;height:22px}
 </style>
 <script>
 (function(){
@@ -359,7 +374,7 @@ nav a.cta[aria-current="true"]{background:var(--sapin-2)}
 </header>
 
 <main>
-  <div class="hero">
+  <div class="hero" id="accueil">
     <div class="wrap grille">
       <div>
         <div class="surtitre">Sur route comme en trail</div>
@@ -378,6 +393,19 @@ nav a.cta[aria-current="true"]{background:var(--sapin-2)}
   </div>
 
 
+  <div class="raccourcis" role="navigation" aria-label="Accès rapide">
+    <div class="wrap">
+      <span class="lib">Aller à</span>
+      <a href="#formules">Formules &amp; tarifs</a>
+      <a href="#methode">Ma méthode</a>
+      <a href="#temoignages">Témoignages</a>
+      <a href="#seances">Séances types</a>
+      <a href="#allures">Calculer mes allures</a>
+      <a href="#evenements">Prochaines courses</a>
+      <a href="#faq">Questions fréquentes</a>
+      <a href="#contact">Me contacter</a>
+    </div>
+  </div>
   <section id="offres" class="beige">
     <div class="wrap">
       <div class="entete">
@@ -508,6 +536,7 @@ nav a.cta[aria-current="true"]{background:var(--sapin-2)}
           <p>Tes séances arrivent sur Intervals et sur ta montre. Ton plan évolue avec tes sensations, ta fatigue et tes résultats.</p>
         </div>
       </div>
+      <div class="suite"><a class="btn btn-plein" href="#formules">Choisir ma formule</a><a class="btn btn-ligne" href="#temoignages">Ce qu’en disent mes athlètes</a></div>
     </div>
   </section>
 
@@ -570,6 +599,7 @@ nav a.cta[aria-current="true"]{background:var(--sapin-2)}
         maj(0);
       })();
       </script>
+      <div class="suite"><a class="btn btn-plein" href="#formules">Je veux le même suivi</a><a class="btn btn-ligne" href="#seances">Voir des séances types</a></div>
     </div>
   </section>
   <section id="seances">
@@ -641,6 +671,7 @@ nav a.cta[aria-current="true"]{background:var(--sapin-2)}
       </div>
       </div>
       <p class="legende">Le graphique montre l'intensité au fil de la séance : plus la barre est haute, plus l'effort est intense.</p>
+      <div class="suite"><a class="btn btn-plein" href="#allures">Calculer mes allures</a><a class="btn btn-ligne" href="#formules">Voir les formules</a></div>
     </div>
   </section>
 
@@ -665,6 +696,7 @@ nav a.cta[aria-current="true"]{background:var(--sapin-2)}
       </div>
       <p class="legende" id="calc400" aria-live="polite"></p>
       <p class="legende">Allures indicatives : on les affine ensemble selon ton profil, ton terrain et tes sensations. <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0RaMs_-pJOMNV_IGy2X3xm06qwWKzZ32V1v8KedG6e2ZIyab3DOg815bL9_L8Tgax8Lc_lVVni" target="_blank" rel="noopener">Réserver mon appel découverte</a></p>
+      <div class="suite"><a class="btn btn-plein" href="#evenements">Préparer une course</a><a class="btn btn-ligne" href="#contact">Me contacter</a></div>
     </div>
   </section>
   <section id="evenements">
@@ -679,6 +711,7 @@ nav a.cta[aria-current="true"]{background:var(--sapin-2)}
         <article class="evt"><span class="quand">Dimanche 7 mars 2027</span><h3>Semi de Bourg-en-Bresse</h3><p>Bourg-en-Bresse (Ain) : semi-marathon, 10 km et 5 km.</p><p class="prepa">Prépa conseillée : 10 semaines, à lancer avant le 27 décembre 2026.</p><a class="btn btn-ligne" href="#contact" data-objet="prepa" data-course="le semi de Bourg-en-Bresse (7 mars 2027)">Préparer cette course</a></article>
       </div>
       <p class="legende">Dates annoncées par les organisateurs : vérifie les horaires et les inscriptions sur le site de chaque course.</p>
+      <div class="suite"><a class="btn btn-plein" href="#contact" data-objet="prepa">Préparer une autre course</a><a class="btn btn-ligne" href="#formules">Voir les formules</a></div>
     </div>
   </section>
   <section id="apropos" class="beige">
@@ -696,6 +729,7 @@ nav a.cta[aria-current="true"]{background:var(--sapin-2)}
           <span class="puce">Route</span><span class="puce">Trail</span><span class="puce">100–120 km / semaine</span><span class="puce">Begat Running Club</span><span class="puce">Licence STAPS</span><span class="puce">Meylan (Isère)</span>
         </div>
       </div>
+      <div class="suite"><a class="btn btn-plein" href="#contact">Me contacter</a><a class="btn btn-ligne" href="#faq">Questions fréquentes</a></div>
     </div>
   </section>
   <section id="faq">
@@ -713,6 +747,7 @@ nav a.cta[aria-current="true"]{background:var(--sapin-2)}
         <details><summary>On se voit en vrai ?</summary><p>Le suivi se fait à distance. On peut se retrouver sur les événements où je me déplace : ils sont listés dans la section Événements.</p></details>
         <details><summary>Comment se passe le paiement ?</summary><p>Chaque mois, au début de la période. <span class="ch">En francs suisses, par TWINT ou virement.</span><span class="fr">En euros, par virement.</span></p></details>
       </div>
+      <div class="suite"><a class="btn btn-plein" href="#contact">Poser ma question</a><a class="btn btn-ligne" href="#formules">Revoir les formules</a></div>
     </div>
   </section>
   <section id="contact" class="sombre">
@@ -787,6 +822,8 @@ nav a.cta[aria-current="true"]{background:var(--sapin-2)}
     <span>Carte pro d'éducateur sportif n° 03826ED0737 · SIRET 878 433 192 00027</span>
   </div>
 </footer>
+<a class="haut" href="#accueil" aria-label="Revenir en haut de la page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></a>
+<script>(function(){var b=document.querySelector('.haut');function f(){b.classList.toggle('visible',window.scrollY>700)}window.addEventListener('scroll',f,{passive:true});f();b.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});history.replaceState(null,'',location.pathname+location.search)})})();</script>
 <a class="wa-flottant" href="https://wa.me/33622818362?text=Bonjour%20Alex%2C%20je%20viens%20de%20ton%20site%20et%20j%27aimerais%20en%20savoir%20plus%20sur%20le%20coaching." target="_blank" rel="noopener" aria-label="M'écrire sur WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.05c-.24.68-1.42 1.32-1.95 1.36-.5.05-.97.23-3.27-.68-2.76-1.09-4.5-3.92-4.64-4.1-.13-.18-1.1-1.47-1.1-2.8 0-1.33.7-1.99.95-2.26.24-.27.53-.34.71-.34l.51.01c.16.01.38-.06.6.46.23.54.77 1.87.84 2 .07.14.11.3.02.48-.09.18-.13.29-.27.45-.13.16-.28.35-.4.47-.13.13-.27.28-.12.54.16.27.7 1.15 1.5 1.86 1.03.92 1.9 1.2 2.17 1.34.27.13.43.11.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.23.6-.14.25.09 1.57.74 1.84.88.27.13.45.2.52.31.07.11.07.65-.17 1.33z"/></svg></a>
 
 <script>
