@@ -203,22 +203,6 @@ html[data-pays="ch"] .fr{display:none !important}
 
 .portrait-img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:14px}
 
-/* Choix du pays à l'entrée */
-#choix-pays{display:none;position:fixed;inset:0;z-index:100;background:var(--creme);align-items:center;justify-content:center;padding:24px;overflow-y:auto}
-html[data-choix="a-faire"] #choix-pays{display:flex}
-html[data-choix="a-faire"] body{overflow:hidden}
-.choix-boite{max-width:560px;width:100%;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px}
-.choix-logo{width:88px;height:88px}
-.choix-boite h1,.choix-boite h2{font-size:clamp(40px,8vw,64px);font-weight:800;color:var(--sapin)}
-.choix-boite p{color:var(--gris)}
-.choix-boutons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;width:100%;margin-top:10px}
-.choix-boutons button{font:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:22px 16px;min-height:120px;border-radius:14px;border:2px solid var(--sapin);background:#FBF8F2;color:var(--sapin)}
-.choix-boutons button:hover{background:var(--sapin);color:var(--creme)}
-.choix-boutons button:hover small{color:#C9D6CC}
-.drapeau{font-size:36px;line-height:1}
-.choix-boutons b{font-family:var(--display);font-size:24px;font-weight:800}
-.choix-boutons small{font-size:14px;color:var(--gris)}
-.lien-pays{background:none;border:0;padding:0;font:inherit;color:#F3B08A;text-decoration:underline;cursor:pointer;min-height:24px}
 
 /* Ancres : le titre de section ne passe plus sous l'en-tête */
 html{scroll-padding-top:96px}
@@ -304,34 +288,34 @@ nav a.cta[aria-current="page"]{background:var(--sapin-2)}
 .wa-flottant{position:fixed;right:18px;bottom:18px;z-index:50;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.28);text-decoration:none}
 .wa-flottant:hover{background:#1EBE5A}
 .wa-flottant svg{width:30px;height:30px}
-html[data-choix="a-faire"] .wa-flottant{display:none}
 @media (max-width: 700px){footer{padding-bottom:96px}}
+
+/* Sélecteur de pays dans l'en-tête */
+.barre .pays{margin-left:auto}
+.pays button .drap{font-size:16px;margin-right:4px}
+nav a[aria-current="true"]{background:var(--beige)}
+nav a.cta[aria-current="true"]{background:var(--sapin-2)}
+@media (max-width: 700px){
+  .barre{row-gap:6px;padding-top:10px;padding-bottom:8px}
+  .barre .pays button{min-height:34px;padding:4px 10px;font-size:14px}
+  .pays .long{display:none}
+  .marque svg{width:36px;height:36px}
+  .marque b{font-size:22px}
+  html{scroll-padding-top:130px}
+}
 </style>
 <script>
 (function(){
-  var html = document.documentElement, p = null, choisi = false;
-  try { var q = new URLSearchParams(location.search).get('pays'); if (q === 'ch' || q === 'fr'){ p = q; choisi = true; } } catch(e){}
-  if (!p){ try { var s = localStorage.getItem('pays'); if (s === 'ch' || s === 'fr'){ p = s; choisi = true; } } catch(e){} }
+  var p = null;
+  try { var q = new URLSearchParams(location.search).get('pays'); if (q === 'ch' || q === 'fr') p = q; } catch(e){}
+  if (!p){ try { var s = localStorage.getItem('pays'); if (s === 'ch' || s === 'fr') p = s; } catch(e){} }
   if (!p){ var l = (navigator.languages || [navigator.language || '']).join(','); p = /-CH/i.test(l) ? 'ch' : 'fr'; }
-  html.setAttribute('data-pays', p);
-  if (!choisi) html.setAttribute('data-choix', 'a-faire');
+  document.documentElement.setAttribute('data-pays', p);
 })();
 </script>
 </head>
 <body>
 
-<div id="choix-pays" role="dialog" aria-modal="true" aria-labelledby="choixTitre">
-  <div class="choix-boite">
-    <svg class="choix-logo" aria-hidden="true"><use href="#logoA"></use></svg>
-    <div class="surtitre">Alex Coach Run</div>
-    <h2 id="choixTitre">Où cours-tu ?</h2>
-    <p>Choisis ton pays pour voir les formules et les prix qui te concernent.</p>
-    <div class="choix-boutons">
-      <button type="button" data-choix-pays="fr"><span class="drapeau" aria-hidden="true">🇫🇷</span><b>France</b><small>Prix en euros</small></button>
-      <button type="button" data-choix-pays="ch"><span class="drapeau" aria-hidden="true">🇨🇭</span><b>Suisse</b><small>Prix en francs suisses</small></button>
-    </div>
-  </div>
-</div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
@@ -352,19 +336,22 @@ html[data-choix="a-faire"] .wa-flottant{display:none}
 
 <header>
   <div class="wrap barre">
-    <a class="marque" href="index.html" aria-label="Alex Coach Run, page d'accueil">
-      <svg aria-hidden="true"><use href="#logoA"></use></svg>
+    <a class="marque" href="index.html" aria-label="Alex Coach Run, haut de page">
+      <svg aria-hidden="true"><use href="index.html#logoA"></use></svg>
       <div><b>Alex</b><span>COACH RUN</span></div>
     </a>
+    <div class="pays" role="group" aria-label="Pays et devise des prix">
+      <button type="button" data-pays-btn="fr" aria-pressed="false"><span class="drap" aria-hidden="true">🇫🇷</span><span class="long">France </span>€</button>
+      <button type="button" data-pays-btn="ch" aria-pressed="false"><span class="drap" aria-hidden="true">🇨🇭</span><span class="long">Suisse </span>CHF</button>
+    </div>
     <nav aria-label="Menu principal">
       <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="formules.html">Formules</a></li>
-        <li><a href="seances.html">Séances &amp; allures</a></li>
-        <li><a href="evenements.html">Événements</a></li>
-        <li><a href="a-propos.html">À propos</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a class="cta" href="contact.html">Me contacter</a></li>
+        <li><a href="index.html#formules">Formules</a></li>
+        <li><a href="index.html#seances">Séances &amp; allures</a></li>
+        <li><a href="index.html#evenements">Événements</a></li>
+        <li><a href="index.html#apropos">À propos</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a class="cta" href="index.html#contact">Me contacter</a></li>
       </ul>
     </nav>
   </div>
@@ -409,7 +396,7 @@ html[data-choix="a-faire"] .wa-flottant{display:none}
 
 <footer>
   <div class="wrap">
-    <span>© Alex Coach Run · Sur route comme en trail · <a href="mentions-legales.html">Mentions légales, CGV et données</a> · <button type="button" id="changerPays" class="lien-pays"><span class="fr">🇫🇷 France</span><span class="ch">🇨🇭 Suisse</span> · changer de pays</button></span>
+    <span>© Alex Coach Run · Sur route comme en trail · <a href="mentions-legales.html">Mentions légales, CGV et données</a></span>
     <span>Carte pro d'éducateur sportif n° 03826ED0737 · SIRET 878 433 192 00027</span>
   </div>
 </footer>
@@ -417,91 +404,20 @@ html[data-choix="a-faire"] .wa-flottant{display:none}
 
 <script>
 (function(){
-  var EMAIL = 'alex.lorcery@gmail.com';
-  var libelles = {decouverte:'Appel découverte', essentielle:'Formule Essentielle', premium:'Formule Premium', performance:'Formule Performance', prepa:'Prépa course / trail', groupe:'Devis événement / groupe', autre:'Question'};
-
   var racine = document.documentElement;
-  var boutonsPays = document.querySelectorAll('[data-choix-pays]');
-  function choisirPays(p){
+  var boutonsPays = document.querySelectorAll('[data-pays-btn]');
+  function majPays(){
+    var p = racine.getAttribute('data-pays');
+    boutonsPays.forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-pays-btn') === p ? 'true' : 'false'); });
+  }
+  boutonsPays.forEach(function(b){ b.addEventListener('click', function(){
+    var p = b.getAttribute('data-pays-btn');
     racine.setAttribute('data-pays', p);
-    racine.removeAttribute('data-choix');
     try { localStorage.setItem('pays', p); } catch(e){}
-    window.scrollTo(0, 0);
-  }
-  boutonsPays.forEach(function(b){ b.addEventListener('click', function(){ choisirPays(b.getAttribute('data-choix-pays')); }); });
-  function ouvrirChoix(){ racine.setAttribute('data-choix', 'a-faire'); var b = document.querySelector('#choix-pays button'); if (b) b.focus(); }
-  var changer = document.getElementById('changerPays');
-  if (changer) changer.addEventListener('click', ouvrirChoix);
-  if (racine.getAttribute('data-choix') === 'a-faire'){ var b0 = document.querySelector('#choix-pays button'); if (b0) b0.focus(); }
+    majPays();
+  }); });
+  majPays();
 
-  document.querySelectorAll('[data-objet]').forEach(function(a){
-    a.addEventListener('click', function(){
-      var s = document.getElementById('objet');
-      if (s) s.value = a.getAttribute('data-objet');
-      var course = a.getAttribute('data-course');
-      var zone = document.getElementById('message');
-      if (course && zone && !zone.value.trim()) zone.value = 'Je veux préparer ' + course + '. ';
-    });
-  });
-
-  var zones = [
-    ['Endurance fondamentale', 62, 70],
-    ['Allure marathon', 75, 80],
-    ['Allure semi-marathon', 80, 85],
-    ['Allure 10 km', 88, 92],
-    ['VMA (fractionné court)', 95, 105]
-  ];
-  function mmss(sec){ sec = Math.round(sec); return Math.floor(sec / 60) + "'" + String(sec % 60).padStart(2, '0') + '"'; }
-  function kmh(v){ return v.toFixed(1).replace('.', ',') + ' km/h'; }
-  var champVma = document.getElementById('vma');
-  var corps = document.getElementById('calcCorps');
-  var l400 = document.getElementById('calc400');
-  if (champVma && corps && l400){
-  function calculer(){
-    var v = parseFloat(String(champVma.value).replace(',', '.'));
-    corps.innerHTML = '';
-    if (!(v >= 8 && v <= 25)){ l400.textContent = 'Entre une VMA comprise entre 8 et 25 km/h.'; return; }
-    zones.forEach(function(z){
-      var lent = v * z[1] / 100, vite = v * z[2] / 100;
-      var cellules = [z[0], z[1] + ' – ' + z[2] + ' %', mmss(3600 / lent) + ' – ' + mmss(3600 / vite) + ' /km', kmh(lent) + ' – ' + kmh(vite)];
-      var tr = document.createElement('tr');
-      cellules.forEach(function(t){ var td = document.createElement('td'); td.textContent = t; tr.appendChild(td); });
-      corps.appendChild(tr);
-    });
-    l400.textContent = 'À 100 % de ta VMA, un 400 m se court en ' + mmss(1440 / v) + ' et un 1000 m en ' + mmss(3600 / v) + '.';
-  }
-  champVma.addEventListener('input', calculer);
-  calculer();
-  }
-
-  var form = document.getElementById('formulaire');
-  var retour = document.getElementById('retour');
-  if (form){
-  try {
-    var params = new URLSearchParams(location.search);
-    var o = params.get('objet'), c = params.get('course');
-    if (o && libelles[o]) form.objet.value = o;
-    if (c && !form.message.value.trim()) form.message.value = 'Je veux préparer ' + c + '. ';
-  } catch(e){}
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var nom = form.nom.value.trim();
-    var mail = form.email.value.trim();
-    if (!nom || !mail || mail.indexOf('@') < 1){
-      retour.hidden = false;
-      retour.textContent = 'Indique ton nom et une adresse e-mail valide pour que je puisse te répondre.';
-      (!nom ? form.nom : form.email).focus();
-      return;
-    }
-    var pays = document.documentElement.getAttribute('data-pays') === 'ch' ? 'Suisse' : 'France';
-    var sujet = libelles[form.objet.value] + ' (' + pays + ') – ' + nom;
-    var corps = 'Nom : ' + nom + '\nE-mail : ' + mail + '\n\n' + form.message.value.trim();
-    var lien = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(sujet) + '&body=' + encodeURIComponent(corps);
-    retour.hidden = false;
-    retour.textContent = "Ton application e-mail devrait s'ouvrir avec le message prêt à envoyer. Si rien ne s'ouvre, écris directement à " + EMAIL + '.';
-    try { window.location.href = lien; } catch(err) {}
-  });
-  }
 })();
 </script>
 </body>
